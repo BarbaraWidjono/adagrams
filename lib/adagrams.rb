@@ -1,3 +1,5 @@
+# THIS PROGRAM WE WROTE PASSES 16/16 OF THE TESTS BUT DOES NOT FUNCTION PROPERLY IN THE TERMINAL. IF YOU UNCOMMENT LINE 61, THIS GAME RUNS PROPERLY IN THE TERMINAL BUT ONLY PASSES 15/16 TESTS. 
+
 @words_created = []
 @final_winner = []
 
@@ -7,7 +9,7 @@ in_progress = true
 
 while in_progress
   in_progress = false
-  
+
   def draw_letters()
     letters =
     ["a", "a", "a", "a", "a", "a", "a", "a", "a", "b", "b", "c", "c", "d", "d", "d", "d", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "f", "f", "g", "g", "g", "h", "h", "i", "i", "i", "i", "i", "i", "i", "i", "i", "j", "k", "l", "l", "l", "l", "m", "m", "n", "n", "n", "n", "n", "n", "o", "o", "o", "o", "o", "o", "o", "o", "p", "p", "q", "r", "r", "r", "r", "r", "r", "s", "s", "s", "s", "t", "t", "t", "t", "t", "t", "u", "u", "u", "u", "v", "v", "x", "y", "y", "z"]
@@ -47,7 +49,7 @@ while in_progress
         testing_array << true
 
       else
-        # puts "That was not a valid word!"
+
         testing_array << false
       end
 
@@ -114,7 +116,7 @@ while in_progress
     winning_words = []
     length_of_winning_word = []
     points_of_all_words_entered = []
-    # max_point_earned = @all_points.max
+
 
     indexes_of_max_point_words = []
     final_winner_hash = {}
@@ -154,21 +156,20 @@ while in_progress
       end
     end
 
-    # puts "Number of winning words of min length: #{number_of_winning_words_of_min_length}"
-    # puts "These are the winning words of shortest length: #{all_winning_words_of_shortest_length}"
+
     length_of_winning_word.length.times do |i|
       if length_of_winning_word[i] == 10
-        # @final_winner = winning_words[i]
+
         final_winner_hash[:word] = winning_words[i]
         final_winner_hash[:score] = score_word(winning_words[i])
         break
       else
         if number_of_winning_words_of_min_length == 1
-          # @final_winner = all_winning_words_of_shortest_length
+
           final_winner_hash[:word] = all_winning_words_of_shortest_length
           final_winner_hash[:score] = score_word(all_winning_words_of_shortest_length[0])
         else
-          # @final_winner = all_winning_words_of_shortest_length[0]
+
           final_winner_hash[:word] = all_winning_words_of_shortest_length[0]
           final_winner_hash[:score] = score_word(all_winning_words_of_shortest_length[0])
         end
@@ -176,11 +177,7 @@ while in_progress
 
     end
 
-    # puts "Length of shortest winning word: #{length_of_shortest_winning_word}"
-    # puts "Index of max scoring words: #{indexes_of_max_point_words}"
-    # puts "These are the lengths of winning words: #{length_of_winning_word}"
-    # puts "These are the winning words: #{winning_words}"
-    # puts "The final winner is: #{@final_winner}"
+
     return final_winner_hash
   end
 
@@ -211,8 +208,7 @@ while in_progress
   else
 
     puts "These are all the words created: #{@words_created}"
-    # puts "These are all the points for all the words: #{@all_points}"
-    # puts "This is the highest score: #{highest_score_from_words(@words_created)}"
+
 
     puts "This is the final winner: #{highest_score_from_words(@words_created)}"
     puts "Thanks for playing. Goodbye!"
